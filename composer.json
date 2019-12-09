@@ -1,0 +1,31 @@
+{
+    "name": "digital-creative/nova-apex-chart",
+    "description": "A Laravel Nova Apex Chart Component.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "apex chart",
+        "chart"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DigitalCreative\\NovaApexChart\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DigitalCreative\\NovaApexChart\\CardServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
