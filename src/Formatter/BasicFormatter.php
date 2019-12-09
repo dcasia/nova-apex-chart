@@ -1,28 +1,32 @@
 <?php
 
-namespace DigitalCreative\NovaApexChart;
+namespace DigitalCreative\NovaApexChart\Formatter;
 
 use JsonSerializable;
-use Laravel\Nova\Card;
 
-class BasicFormatter implements JsonSerializable {
-
+class BasicFormatter implements JsonSerializable
+{
+    /**
+     * @var string
+     */
+    private $prefix;
 
     /**
      * @var string
      */
-    private string $prefix;
-    private string $suffix;
+    private $suffix;
 
     public function __construct(string $prefix, string $suffix)
     {
+
         $this->prefix = $prefix;
         $this->suffix = $suffix;
+
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
-        return  [
+        return [
             'prefix' => $this->prefix,
             'suffix' => $this->suffix,
         ];

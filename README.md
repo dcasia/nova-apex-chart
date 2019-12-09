@@ -64,7 +64,7 @@ new DataOnlySeries([ 400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380 ]);
 
 Create custom formatter
 ```php
-use DigitalCreative\NovaApexChart\BasicFormatter;
+use DigitalCreative\NovaApexChart\formatter\BasicFormatter;
 new BasicFormatter('$', 'USD');
 ```
 

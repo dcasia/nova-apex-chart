@@ -19,6 +19,9 @@
             // 'resourceId',
             // 'resourceName',
         ],
+        created() {
+            console.log(this.card)
+        },
 
         methods: {
             handleFormatter(options) {

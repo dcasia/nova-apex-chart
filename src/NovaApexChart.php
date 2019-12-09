@@ -13,6 +13,15 @@ class NovaApexChart extends Card
      */
     public $width = 'full';
 
+    public function __construct($component = null)
+    {
+        parent::__construct($component);
+        $this->withMeta([
+            'options' => (object)[],
+            'type' => 'bar'
+        ]);
+    }
+
     /**
      * Get the component name for the element.
      *
@@ -22,29 +31,6 @@ class NovaApexChart extends Card
     {
         return 'nova-apex-chart';
     }
-
-    public static function createBasicSeries(string $name, array $data)
-    {
-        return [
-            'name' => $name,
-            'data' => $data,
-        ];
-    }
-
-    public static function createDataOnlySeries(array $data)
-    {
-        return [
-            'data' => $data,
-        ];
-    }
-
-    public static function createCustomSeries(array $series)
-    {
-        return [
-            'series' => $series,
-        ];
-    }
-
 
     public function series(array $series): self
     {
@@ -58,7 +44,6 @@ class NovaApexChart extends Card
 
     public function options(array $options): self
     {
-        return $this->withMeta([ 'options' => $options ]);
+        return $this->withMeta([ 'options' => (object)$options ]);
     }
-
 }
