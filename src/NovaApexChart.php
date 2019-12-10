@@ -15,11 +15,13 @@ class NovaApexChart extends Card
 
     public function __construct($component = null)
     {
+
         parent::__construct($component);
         $this->withMeta([
-            'options' => (object)[],
+            'options' => (object) [],
             'type' => 'bar'
         ]);
+
     }
 
     /**
@@ -44,6 +46,6 @@ class NovaApexChart extends Card
 
     public function options(array $options): self
     {
-        return $this->withMeta([ 'options' => (object)$options ]);
+        return $this->withMeta([ 'options' => (object) $options ]);
     }
 }
