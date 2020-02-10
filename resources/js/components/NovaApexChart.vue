@@ -1,11 +1,12 @@
 <template>
-    <card class="p-10">
+    <card class="px-6 py-4">
         <apexchart :type="card.type" :options="options" :series="card.series"></apexchart>
     </card>
 </template>
 
 <script>
     import VueApexCharts from 'vue-apexcharts'
+    import commaNumber from 'comma-number'
 
     export default {
         components: {
@@ -19,10 +20,6 @@
             // 'resourceId',
             // 'resourceName',
         ],
-        created() {
-            console.log(this.card)
-        },
-
         methods: {
             handleFormatter(options) {
 
@@ -31,8 +28,10 @@
                     if (key === 'formatter') {
                         const prefix = options[ key ].prefix || ''
                         const suffix = options[ key ].suffix || ''
+                        const showComma = options[ key ].showComma || false
                         options[ key ] = function (val) {
-                            return `${ prefix } ${ val } ${ suffix }`
+                            const finalValue = showComma ? commaNumber(val) : val
+                            return `${ prefix } ${ finalValue } ${ suffix }`
                         }
                     }
 
@@ -43,7 +42,6 @@
 
             }
         },
-
         computed: {
             options() {
                 const options = this.card.options

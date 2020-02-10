@@ -68,6 +68,12 @@ use DigitalCreative\NovaApexChart\formatter\BasicFormatter;
 new BasicFormatter('$', 'USD');
 ```
 
+Show comma separated numbers
+```php
+use DigitalCreative\NovaApexChart\formatter\BasicFormatter;
+new BasicFormatter('', '', true);
+```
+
 ## License
 
 The MIT License (MIT). Please see [License File](https://raw.githubusercontent.com/dcasia/nova-slider-filter/master/LICENSE) for more information.

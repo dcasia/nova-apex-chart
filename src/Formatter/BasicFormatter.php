@@ -16,11 +16,17 @@ class BasicFormatter implements JsonSerializable
      */
     private $suffix;
 
-    public function __construct(string $prefix, string $suffix)
+    /**
+     * @var bool
+     */
+    private $showComma;
+
+    public function __construct(string $prefix, string $suffix, bool $showComma = false)
     {
 
         $this->prefix = $prefix;
         $this->suffix = $suffix;
+        $this->showComma = $showComma;
 
     }
 
@@ -29,6 +35,7 @@ class BasicFormatter implements JsonSerializable
         return [
             'prefix' => $this->prefix,
             'suffix' => $this->suffix,
+            'showComma' => $this->showComma,
         ];
     }
 }
