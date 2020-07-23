@@ -1,6 +1,6 @@
 <template>
     <card class="px-6 py-4">
-        <apexchart :type="card.type" :options="options" :series="card.series"></apexchart>
+        <apexchart :width="card.chartWidth" :height="card.chartHeight" :type="card.type" :options="options" :series="card.series"></apexchart>
     </card>
 </template>
 
@@ -51,9 +51,3 @@
         }
     }
 </script>
-
-<style lang="scss" scoped>
-    .p-10 {
-        padding: 2.5rem;
-    }
-</style>
