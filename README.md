@@ -21,6 +21,10 @@ composer require digital-creative/nova-apex-chart
 ## Basic Usage
 
 ```php
+use DigitalCreative\NovaApexChart\NovaApexChart;
+use DigitalCreative\NovaApexChart\Formatter\BasicFormatter;
+use DigitalCreative\NovaApexChart\Series\DataOnlySeries;
+
 class ExampleNovaResource extends Resource
 {
 
@@ -52,25 +56,25 @@ class ExampleNovaResource extends Resource
 
 Create basic series by calling
 ```php
-use DigitalCreative\NovaApexChart\BasicSeries;
+use DigitalCreative\NovaApexChart\Series\BasicSeries;
 new BasicSeries('title', [ 400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380 ]);
 ```
 
 Create data only series by calling
 ```php
-use DigitalCreative\NovaApexChart\DataOnlySeries;
+use DigitalCreative\NovaApexChart\Series\DataOnlySeries;
 new DataOnlySeries([ 400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380 ]);
 ```
 
 Create custom formatter
 ```php
-use DigitalCreative\NovaApexChart\formatter\BasicFormatter;
+use DigitalCreative\NovaApexChart\Formatter\BasicFormatter;
 new BasicFormatter('$', 'USD');
 ```
 
 Show comma separated numbers
 ```php
-use DigitalCreative\NovaApexChart\formatter\BasicFormatter;
+use DigitalCreative\NovaApexChart\Formatter\BasicFormatter;
 new BasicFormatter('', '', true);
 ```
 
